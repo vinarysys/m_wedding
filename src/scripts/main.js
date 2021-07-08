@@ -24,9 +24,9 @@ $(document).ready(function () {
     $("#shareSms").click(function (){
         const userAgent = navigator.userAgent.toLocaleLowerCase()
         if (userAgent.search('android') > -1) {
-            location.href="sms:?body=승보 희정 결혼합니다. https://naver.com"
+            location.href="sms:?body=승보 희정 결혼합니다. https://bit.ly/2THjQ9b"
         } else if (userAgent.search('iphone') > -1 || uagent.search('ipad') > -1) {
-            location.href="sms:&body=승보 희정 결혼합니다. https://naver.com"
+            location.href="sms:&body=승보 희정 결혼합니다. https://bit.ly/2THjQ9b"
         }
     })
 
