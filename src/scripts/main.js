@@ -1,10 +1,11 @@
 // Add your javascript here
 // Don't forget to add it into respective layouts where this js file is needed
 $(document).ready(function () {
-    $("#map-image").on("click")
-    {
 
-    }
+     $('#lightgallery').lightGallery({
+        selector: '.light-link',
+        thumbnail: true,
+    }); 
 
     $('#parentsToggle').on('click', function () {
         let collapses = $('#parents-collapse'); 
