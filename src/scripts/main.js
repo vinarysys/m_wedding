@@ -5,7 +5,34 @@ $(document).ready(function () {
      $('#lightgallery').lightGallery({
         selector: '.light-link',
         thumbnail: true,
+        download:false,
     }); 
+
+    preloading([
+       /*  "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section1.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section2.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section3.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section4.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section5.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section6.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section7.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section8.jpg",
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section9.jpg", */
+        "https://vinarysys.github.io/m_wedding/src/images/section1.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section2.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section3.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section4.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section5.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section6.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section7.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section8.jpg",
+        "https://vinarysys.github.io/m_wedding/src/images/section9.jpg",
+    ]);
+
+    /* 상단바 없애기 */
+	window.addEventListener("load", function() {
+		setTimeout(scrollTo, 0, 0, 1);
+	}, false);
 
     $('#parentsToggle').on('click', function () {
         let collapses = $('#parents-collapse'); 
@@ -30,7 +57,6 @@ $(document).ready(function () {
             location.href="sms:&body=승보 희정 결혼합니다. https://bit.ly/2THjQ9b"
         }
     })
-
       //<![CDATA[
       // // 사용할 앱의 JavaScript 키를 설정해 주세요.
       Kakao.init('76481e0ad142650d0f2d8ac18c01bb11');
@@ -57,8 +83,15 @@ $(document).ready(function () {
         ]
       });
     //]]>
-
 })
+
+function preloading (imageArray) { 
+    let n = imageArray.length; 
+    for (let i = 0; i < n; i++) { 
+        let img = new Image();
+        img.src = imageArray[i]; 
+    } 
+}
 
 
 // Smooth scroll for links with hashes
