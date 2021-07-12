@@ -8,8 +8,22 @@ $(document).ready(function () {
         download:false,
     }); 
 
-    preloading([
-       /*  "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section1.jpg",
+    let queue = new createjs.LoadQueue();
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section1.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section2.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section3.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section4.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section5.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section6.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section7.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section8.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/section9.jpg",
+    "https://vinarysys.github.io/m_wedding/src/images/main.jpg");
+
+
+
+    /*     preloading([
+      "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section1.jpg",
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section2.jpg",
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section3.jpg",
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section4.jpg",
@@ -17,7 +31,7 @@ $(document).ready(function () {
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section6.jpg",
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section7.jpg",
         "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section8.jpg",
-        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section9.jpg", */
+        "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section9.jpg",
         "https://vinarysys.github.io/m_wedding/src/images/section1.jpg",
         "https://vinarysys.github.io/m_wedding/src/images/section2.jpg",
         "https://vinarysys.github.io/m_wedding/src/images/section3.jpg",
@@ -27,7 +41,7 @@ $(document).ready(function () {
         "https://vinarysys.github.io/m_wedding/src/images/section7.jpg",
         "https://vinarysys.github.io/m_wedding/src/images/section8.jpg",
         "https://vinarysys.github.io/m_wedding/src/images/section9.jpg",
-    ]);
+    ]); */
 
     /* 상단바 없애기 */
 	window.addEventListener("load", function() {
@@ -84,14 +98,14 @@ $(document).ready(function () {
       });
     //]]>
 })
-
+/* 
 function preloading (imageArray) { 
     let n = imageArray.length; 
     for (let i = 0; i < n; i++) { 
         let img = new Image();
         img.src = imageArray[i]; 
     } 
-}
+} */
 
 
 // Smooth scroll for links with hashes
