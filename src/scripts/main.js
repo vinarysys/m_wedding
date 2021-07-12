@@ -10,17 +10,17 @@ $(document).ready(function () {
 
     let queue = new createjs.LoadQueue();
     queue.on("fileload", handleFileComplete);
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section1.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section2.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section3.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section4.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section5.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section6.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section7.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section8.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/section9.jpg",
-    "https://vinarysys.github.io/m_wedding/src/images/main.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section1.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section2.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section3.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section4.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section5.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section6.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section7.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section8.jpg");
+    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section9.jpg");
     function handleFileComplete(event) {
+        event.result.style.display="none";
         document.body.appendChild(event.result);
     }
 
