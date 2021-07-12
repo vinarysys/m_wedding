@@ -9,6 +9,7 @@ $(document).ready(function () {
     }); 
 
     let queue = new createjs.LoadQueue();
+    queue.on("fileload", handleFileComplete);
     queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section1.jpg",
     "https://vinarysys.github.io/m_wedding/src/images/section2.jpg",
     "https://vinarysys.github.io/m_wedding/src/images/section3.jpg",
@@ -19,6 +20,9 @@ $(document).ready(function () {
     "https://vinarysys.github.io/m_wedding/src/images/section8.jpg",
     "https://vinarysys.github.io/m_wedding/src/images/section9.jpg",
     "https://vinarysys.github.io/m_wedding/src/images/main.jpg");
+    function handleFileComplete(event) {
+        document.body.appendChild(event.result);
+    }
 
 
 
