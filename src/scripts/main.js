@@ -143,6 +143,7 @@ clipboard.on( 'success', function() {
  } );
 
  function isElementInViewport(el) {
+/* sleep */
     if (!el)
       return false;
     var rect = el.getBoundingClientRect();
