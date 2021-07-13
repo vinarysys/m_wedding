@@ -8,23 +8,7 @@ $(document).ready(function () {
         download:false,
     }); 
 
-    let queue = new createjs.LoadQueue();
-    queue.on("fileload", handleFileComplete);
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section1.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section2.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section3.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section4.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section5.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section6.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section7.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section8.jpg");
-    queue.loadFile("https://vinarysys.github.io/m_wedding/src/images/section9.jpg");
-    function handleFileComplete(event) {
-        event.result.style.display="none";
-        document.body.appendChild(event.result);
-    }
-
-
+    loadItemsInView();
 
     /*     preloading([
       "file:///C:/Users/shego/Desktop/m_wedding/weddinghall_sb_hj/src/images/section1.jpg",
@@ -157,3 +141,27 @@ clipboard.on( 'success', function() {
         alertNum.hide();
     },1500);
  } );
+
+ function isElementInViewport(el) {
+    if (!el)
+      return false;
+    var rect = el.getBoundingClientRect();
+    rect.top >=0
+    console.log(rect.top >= 0)
+    rect.left >= 0
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+    return true;
+  }
+
+  function loadItemsInView() {
+    //Select elements by the row id.
+    $("#lightgallery [data-src]").each(function () {
+        var isVisible = isElementInViewport(this);
+        if (isVisible) {
+            if ($(this).attr("src") == undefined) {
+                $(this).attr("src", $(this).data("src"));
+            }
+        }
+    });
+  }
